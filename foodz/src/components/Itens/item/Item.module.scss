@@ -1,14 +1,16 @@
 @import "styles/variaveis";
 @import "styles/breakpoints";
 
-$massas: #d73b3b;
+$massas: #e6c864;
 $carnes: #30201e;
-$combos: #e6c864;
+$combos: #e66464;
 $veganos: #80aa40;
 
 .item {
   display: flex;
-  flex-wrap: wrap;
+  @media (max-width: $desktop_xsm) {
+    flex-direction: column;
+  }
   width: 90%;
   &__imagem {
     max-width: 340px;
@@ -20,12 +22,15 @@ $veganos: #80aa40;
       width: 100%;
     }
   }
+  &__icon {
+    margin-right: 5px;
+  }
   &__descricao {
     display: flex;
     flex: 1;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 20px;
     @media (max-width: $desktop_xsm) {
       flex-direction: row;
@@ -54,14 +59,23 @@ $veganos: #80aa40;
     margin-bottom: 20px;
     max-width: 700px;
     @media (max-width: $desktop_xsm) {
-      justify-content: flex-end;
+      justify-content: space-between;
+      width: 100%;
     }
     @media (max-width: $mobile) {
-      justify-content: flex-start;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100%;
+
+      .item__porcao {
+        margin: 10px 0;
+      }
+      .item__qtdpessoas {
+        margin: 0 0 10px 0;
+      }
     }
-    > div {
-      margin: 10px;
-    }
+
   }
   &__tipo {
     align-items: center;

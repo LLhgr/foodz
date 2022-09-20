@@ -23,16 +23,6 @@
     padding-left: 10px;
     font-family: "Qwitcher Grypen", cursive;
     font-size: 3rem;
-
-    @media (max-width: $desktop_xsm) {
-      padding: 0px $padding-horizontal-mobile;
-    }
-    @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-      padding: 0px $padding-horizontal-sm;
-    }
-    @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-      padding: 0px $padding-horizontal-md;
-    }
   }
 }
 
@@ -48,6 +38,15 @@
   &__text {
     color: white;
     font-size: 8rem;
+
+    @media (max-width: $mobile) {
+      font-size: 4rem;
+      margin-left: 30px;
+    }
+
+    @media (max-width: $desktop_sm) {
+      margin-left: 30px;
+    }
   }
 }
 
